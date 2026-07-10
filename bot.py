@@ -98,7 +98,6 @@ def keep_alive():
     """Har 5 minute mein bot ko active rakhne ke liye"""
     while True:
         try:
-            # Bot ki status check karo
             print("🔄 Bot is alive...")
             time.sleep(300)  # 5 minute
         except Exception as e:
@@ -241,14 +240,13 @@ async def stats(event):
         parse_mode="markdown"
     )
 
+# ---------- MAIN - BOT START ----------
 print("🤖 Bot chal raha hai... (24/7 Active)")
-bot.run_until_disconnected()    try:
-        await event.reply(f"📥 *Download ho raha hai:* {file_data['name']}", parse_mode="markdown")
-        await event.reply(file=file_data['path'])
-        increment_download(token)
-        os.remove(file_data['path'])
-    except Exception as e:
-        await event.reply(f"❌ Download failed: {str(e)}")
 
-print("🤖 Bot chal raha hai...")
-bot.run_until_disconnected()
+try:
+    bot.run_until_disconnected()
+except Exception as e:
+    print(f"❌ Bot crashed: {e}")
+    time.sleep(5)
+    # Auto-restart
+    os.execv(__file__, sys.argv)
