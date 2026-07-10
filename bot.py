@@ -5,9 +5,9 @@ import datetime
 from telethon import TelegramClient, events
 
 # ---------- ENVIRONMENT VARIABLES (Render pe set karna) ----------
-API_ID = int(os.environ.get("API_ID", 39034594))
-API_HASH = os.environ.get("API_HASH", "59cd4c5cdc4b692c5275d15d13ca0e82")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "8561943714:AAG9uZGYLo0IPbiCbrSqcN2eq0cLUZXJU6s")
+API_ID = int(os.environ.get("API_ID", 12345))
+API_HASH = os.environ.get("API_HASH", "API_HASH_HARE")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "BOT_TOKEN_HARE")
 # -----------------------------------------------------------------
 
 UPLOAD_DIR = "uploads/"
